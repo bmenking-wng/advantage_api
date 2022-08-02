@@ -1,0 +1,44 @@
+{
+    "name": "worldnewsgroup/advantage-api",
+    "description": "Swagger generated wrapper for Advantage API",
+    "keywords": [
+        "swagger",
+        "php",
+        "sdk",
+        "api",
+        "advantagecs"
+    ],
+    "homepage": "http://swagger.io",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Swagger and contributors",
+            "homepage": "https://github.com/swagger-api/swagger-codegen"
+        },
+        {
+            "name": "World News Group",
+            "homepage": "https://wng.org/developers"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.0",
+        "vlucas/phpdotenv": "^5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "squizlabs/php_codesniffer": "~2.6",
+        "friendsofphp/php-cs-fixer": "~2.12"
+    },
+    "autoload": {
+        "psr-4": { 
+            "Advantage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { "Swagger\\Client\\" : "test/" }
+    }
+}
