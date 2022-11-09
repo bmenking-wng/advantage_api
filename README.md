@@ -20,33 +20,13 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com//.git"
+      "url": "https://github.com/bmenking-wng/advantage_api"
     }
-  ],
-  "require": {
-    "/": "*@dev"
-  }
+  ]
 }
 ```
 
-Then run `composer install`
-
-### Manual Installation
-
-Download the files and include `autoload.php`:
-
-```php
-    require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
-```
-
-## Tests
-
-To run the unit tests:
-
-```
-composer install
-./vendor/bin/phpunit
-```
+Then run `composer require worldnewsgroup/advantage_api`
 
 ## Getting Started
 
@@ -56,15 +36,18 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\AcsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$support_log_create_request = new \Swagger\Client\Model\SupportLogCreateRequest(); // \Swagger\Client\Model\SupportLogCreateRequest | A SupportLogCreateRequest object
+use Advantage\Advantage;
+use Advantage\Environment as AdvantageEnvironment;
+use Advantage\Client\Model\SupportLogCreateRequest();
+
+AdvantageEnvironment::configure($endpoint, $username, $password);
+
+$acsApi = Advantage::getApi('AcsApi');
+
+$support_log_create_request = new SupportLogCreateRequest(); // \Swagger\Client\Model\SupportLogCreateRequest | A SupportLogCreateRequest object
 
 try {
-    $result = $apiInstance->acsCreateSupportLog($support_log_create_request);
+    $result = $ascApi->acsCreateSupportLog($support_log_create_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AcsApi->acsCreateSupportLog: ', $e->getMessage(), PHP_EOL;
