@@ -23,9 +23,9 @@ class Advantage {
             'debug'=>$env->getDebug()
         ];
 
-        if( is_null($env->getUsername()) ) {
+        if( $env->hasProxy() ) {
             $options['headers'] = [
-                'X-Api-Key'=>$env->getPassword()
+                'X-Api-Key'=>$env->getToken()
             ];
         }
         else {

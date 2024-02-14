@@ -7,11 +7,11 @@ class Environment {
     /** @internal */
     private static Environment $myself;
     /** @internal */
-    private String $endpoint;
+    private string $endpoint;
     /** @internal */
-    private String $username;
+    private string $username;
     /** @internal */
-    private String $password;
+    private string $password;
     /** @internal */
     private bool $debug;
     /** @internal */
@@ -22,7 +22,7 @@ class Environment {
     /**
      * @internal
      */
-    public function __construct(String $endpoint, String $username, String $password, int $timeout, bool $debug, bool $verify_host_ssl) {
+    public function __construct(string $endpoint, ?string $username, string $password, int $timeout, bool $debug, bool $verify_host_ssl) {
         $this->endpoint = $endpoint;
         $this->username = $username;
         $this->password = $password;
@@ -31,7 +31,7 @@ class Environment {
         $this->timeout = $timeout;
     }
 
-    public static function configure(String $endpoint, String $username, String $password, int $timeout = 15, bool $debug = false, bool $verify_host_ssl = true) {
+    public static function configure(string $endpoint, ?string $username, string $password, int $timeout = 15, bool $debug = false, bool $verify_host_ssl = true) {
         self::$myself = new self($endpoint, $username, $password, $timeout, $debug, $verify_host_ssl);
     }
 
@@ -61,5 +61,13 @@ class Environment {
 
     public function getVerifyHostSsl() {
         return $this->verify_host_ssl;
+    }
+
+    public function hasProxy() {
+        return is_null($this->username);
+    }
+
+    public function getToken() {
+        return $this->password;
     }
 }
