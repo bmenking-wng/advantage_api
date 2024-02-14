@@ -9,7 +9,7 @@ class Environment {
     /** @internal */
     private string $endpoint;
     /** @internal */
-    private string $username;
+    private ?string $username;
     /** @internal */
     private string $password;
     /** @internal */
