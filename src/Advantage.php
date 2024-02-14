@@ -32,8 +32,12 @@ class Advantage {
             $options['auth'] = [$env->getUsername(), $env->getPassword()];
         }
 
+        $config = new \Advantage\Client\Configuration();
+        $config->setHost($env->getEndPoint());
+
         $instance = new $class(
-            new \GuzzleHttp\Client($options)
+            new \GuzzleHttp\Client($options),
+            $config
         );
 
         return $instance;
