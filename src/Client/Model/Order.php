@@ -378,6 +378,7 @@ class Order implements ModelInterface, ArrayAccess
     const ORDER_TYPE_REPEATING_ORDER = 'RepeatingOrder';
     const ORDER_TYPE_PREVIEW_ORDER = 'PreviewOrder';
     const ORDER_TYPE_WAREHOUSE_TRANSFER = 'WarehouseTransfer';
+    const ORDER_TYPE_ACCOUNTS_RECEIVABLE = 'AccountsReceivable';
     const WEB_BILL_ME_ALLOWED_YES = 'Yes';
     const WEB_BILL_ME_ALLOWED_NO = 'No';
     const WEB_BILL_ME_ALLOWED_ASSUMED = 'Assumed';
@@ -401,6 +402,7 @@ class Order implements ModelInterface, ArrayAccess
             self::ORDER_TYPE_REPEATING_ORDER,
             self::ORDER_TYPE_PREVIEW_ORDER,
             self::ORDER_TYPE_WAREHOUSE_TRANSFER,
+            self::ORDER_TYPE_ACCOUNTS_RECEIVABLE,
         ];
     }
     
