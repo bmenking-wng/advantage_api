@@ -1,7 +1,7 @@
 {
     "name": "worldnewsgroup/advantage-api",
     "description": "Swagger generated wrapper for Advantage API",
-    "version": "v2.0.0",
+    "version": "v2.0.1",
     "keywords": [
         "swagger",
         "php",

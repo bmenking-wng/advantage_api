@@ -238,6 +238,7 @@ class OrderSummary implements ModelInterface, ArrayAccess
     const ORDER_TYPE_REPEATING_ORDER = 'RepeatingOrder';
     const ORDER_TYPE_PREVIEW_ORDER = 'PreviewOrder';
     const ORDER_TYPE_WAREHOUSE_TRANSFER = 'WarehouseTransfer';
+    const ORDER_TYPE_CUSTOM_63 = '63';
     
 
     
@@ -258,6 +259,7 @@ class OrderSummary implements ModelInterface, ArrayAccess
             self::ORDER_TYPE_REPEATING_ORDER,
             self::ORDER_TYPE_PREVIEW_ORDER,
             self::ORDER_TYPE_WAREHOUSE_TRANSFER,
+            self::ORDER_TYPE_CUSTOM_63,
         ];
     }
     
